@@ -1,0 +1,29 @@
+.container{
+    margin-top: 10px;
+}
+
+.searchbar{
+    margin-bottom: 15px;
+}
+
+.thumb{
+    min-width: 100%;
+    overflow: hidden;
+}
+
+.row{
+    margin-bottom: 15px;
+}
+
+.userinfo{
+    margin-bottom:20px;
+}
+
+.name{
+    font-size:2em;
+}
+
+.fetcherror{
+    text-align: center;
+    color: red;
+}

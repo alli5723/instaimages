@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Insta Feed</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/rikmms/progress-bar-4-axios/0a3acf92/dist/nprogress.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/alertify.min.css"/>
+    
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-filter/dist/angular-filter.min.js"></script>
+
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="node_modules/axios/dist/axios.min.js"></script>
+
+  <script src="https://cdn.rawgit.com/rikmms/progress-bar-4-axios/0a3acf92/dist/index.js"></script> 
+  <script src="js/controllers.js"></script>
+
+<body ng-app="qminder" ng-controller="indexController">
+
+  <div  class="container">
+    <!-- 
+      <div class="col-sm-4" ng-repeat="resource in resources" >
+          {{ resource.node.thumbnail_src }}
+      </div> -->
+
+      <div class="input-group searchbar">
+          <input type="text" class="form-control" placeholder="Instagram Handle" ng-model="searchname">
+          <div class="input-group-btn">
+            <button class="btn btn-success" ng-click="search()" type="submit">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
+        </div>
+        <div class="fetcherror">
+          {{error}}
+        </div>
+
+        <div class="row">
+          <div class="col-sm-3">
+              <img ng-show="profile_pic_url != ''" ng-src="{{profile_pic_url}}" class="img-circle" alt="Profile">
+          </div>
+          <div class="userinfo col-sm-9">
+              <h1 class="name">{{fullname}}</h1>
+              <div>{{biography}}</div>
+              <div><a target="_blank" href="{{external_url}}">{{external_url}}</a></div>
+          </div>
+        </div>
+        
+
+      <div class="row" ng-repeat="resourceChunk in edges | chunkBy:3">
+            
+            <div class="col-sm-4" ng-repeat="resource in resourceChunk" >
+                <img class="img-thumbnail" ng-src="{{ resource.node.thumbnail_src }}"/>
+            </div>
+      </div>
+  </div>
+
+</body>
+</html>

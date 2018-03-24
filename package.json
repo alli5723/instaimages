@@ -1,0 +1,17 @@
+{
+  "name": "qminder",
+  "version": "1.0.0",
+  "description": "An Application to show instagram image feeds",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alli Abdulateef",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-filter": "^0.5.17",
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {}
+}
