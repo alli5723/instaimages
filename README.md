@@ -15,6 +15,7 @@ E.g. If on mac or linux system with default php installation, you can host using
 ```
 $ php -S localhost:8011 -t ./
 ```
+The file would now be available via http://localhost:8011/
 
 ## Option 2
 Alternatively, on a system that has node installed, you can follow instructions indicated in this post
